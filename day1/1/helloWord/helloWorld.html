@@ -1,0 +1,38 @@
+<template>
+  <lightning-card title="HelloWorld" icon-name="custom:custom14">
+    <div class="slds-m-around_medium">
+      <p>Hello, {greeting}!</p>
+    </div>
+
+    <div class="slds-m-around_medium">
+
+      <lightning-input
+        name="firstName"
+        label="First Name"
+        onchange="{handleChange}"
+      ></lightning-input>
+      <lightning-input
+        name="lastName"
+        label="Last Name"
+        onchange="{handleChange}"
+      ></lightning-input>
+
+      <!-- new -->
+      <div class="slds-m-around_medium">
+        <lightning-input
+          type="checkbox"
+          label="Show details"
+          onchange="{handleCheckBoxChange}"
+        ></lightning-input>
+
+        <template if:true="{areDetailsVisible}">
+          <p class="slds-m-top_medium">
+            Uppercased Full Name: {uppercasedFullName}
+          </p>
+        </template>
+      </div>
+      <!-- new end -->
+      
+    </div>
+  </lightning-card>
+</template>
