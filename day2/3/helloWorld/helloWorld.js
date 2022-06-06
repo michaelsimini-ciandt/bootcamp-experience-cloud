@@ -57,6 +57,18 @@ export default class HelloWorld extends LightningElement {
     this.areDetailsVisible = event.target.checked;
   }
 
+
+ // new
+  deleteContact(event){
+    console.log('event.detail', event.detail);
+    this.removeContact(event.detail);
+ }
+ 
+  // new
+  removeContact(id){
+    this.contacts = this.contacts.filter(el => el.Id !== id);
+  }
+
   
   //LIFE HOOKS
   constructor(){
